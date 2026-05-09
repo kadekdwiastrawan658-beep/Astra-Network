@@ -1,0 +1,313 @@
+/* ==========================================
+   MONLD NETWORK - MAIN STYLES
+   ========================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#6366f1, #8b5cf6);
+  border-radius: 999px;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(10,14,39,1) 35%), 
+              linear-gradient(135deg, #0a0e27 0%, #1a1a4d 50%, #0f0f2e 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  color: #fff;
+  transition: background 0.8s ease;
+  background-size: cover;
+  background-position: center;
+  cursor: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(99,102,241,0.12), transparent 35%), 
+              linear-gradient(180deg, rgba(99,102,241,0.08), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   BACKGROUND EFFECTS (REDUCED)
+   ========================================== */
+.aurora {
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 140%;
+  height: 60%;
+  background: linear-gradient(145deg, rgba(99,102,241,0.18), rgba(14,165,233,0.1), rgba(168,85,247,0.12));
+  filter: blur(40px);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#particles-js {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#nebula {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  display: none;
+}
+
+.galaxy {
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ==========================================
+   CUSTOM CURSOR
+   ========================================== */
+#custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.15s ease, height 0.15s ease, background 0.2s ease, transform 0.08s linear;
+  backdrop-filter: blur(2px);
+}
+
+#custom-cursor.hover {
+  width: 34px;
+  height: 34px;
+  background: rgba(139, 92, 246, 0.25);
+}
+
+#custom-cursor.click {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.stars {
+  animation: moveStars 120s linear infinite;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
+
+/* ==========================================
+   UI ELEMENTS
+   ========================================== */
+nav {
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  transition: 0.3s;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 1);
+  transform: scale(1.05);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* ==========================================
+   FORM ELEMENTS
+   ========================================== */
+input, textarea, select, button {
+  cursor: auto;
+}
+
+#region-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+#region-select:hover {
+  border-color: #6366f1 !important;
+}
+
+#login-modal input:focus {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* ==========================================
+   TABLES & DATA
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+table td {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ==========================================
+   SOCIAL ICONS
+   ========================================== */
+.social-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1rem;
+  transition: all 0.35s ease;
+  filter: drop-shadow(0 0 10px rgba(99,102,241,0.35));
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+.social-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card:hover .social-icon {
+  transform: scale(1.12) translateY(-4px) rotate(45deg);
+}
+
+.social-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+  top: -40%;
+  left: -40%;
+  animation: moveGlow 6s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(0,0) rotate(0deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* ==========================================
+   MODALS
+   ========================================== */
+#modal > div {
+  animation: popup 0.35s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+section {
+  position: relative;
+  z-index: 2;
+}
+
+section, nav, footer {
+  position: relative;
+  z-index: 10;
+}
+
+body {
+  overflow-x: hidden;
+}

@@ -476,7 +476,9 @@ nav a:hover::after {
         <div class="text-4xl mb-3">⭐</div>
         <p class="text-xs text-gray-400 mb-3">Paling Populer!</p>
         <p class="text-2xl font-bold text-indigo-400 mb-4">Rp 60K</p>
-        <button onclick="beliRank('Asteroid','60K')" class="shop-btn">Beli Sekarang</button>
+        <button onclick="beliRank('Asteroid','60K')" class="shop-btn">
+  Beli Sekarang
+</button>
       </div>
       <div class="rank-card rarity-rare card-hover">
         <div class="hologram-overlay"></div>
@@ -484,7 +486,9 @@ nav a:hover::after {
         <div class="text-4xl mb-3">💎</div>
         <p class="text-xs text-gray-400 mb-3">Banyak Dipilih</p>
         <p class="text-2xl font-bold text-purple-400 mb-4">Rp 100K</p>
-        <button onclick="beliRank('Bulan','100K')" class="shop-btn">Beli Sekarang</button>
+        <button onclick="beliRank('Bulan','100K')" class="shop-btn">
+  Beli Sekarang
+</button>
       </div>
       <div class="rank-card rarity-epic card-hover">
         <div class="hologram-overlay"></div>
@@ -492,7 +496,9 @@ nav a:hover::after {
         <div class="text-4xl mb-3">🌟</div>
         <p class="text-xs text-gray-400 mb-3">Langka</p>
         <p class="text-2xl font-bold text-cyan-400 mb-4">Rp 140K</p>
-        <button onclick="beliRank('Orbiter','140K')" class="shop-btn">Beli Sekarang</button>
+        <button onclick="beliRank('Orbiter','140K')" class="shop-btn">
+  Beli Sekarang
+</button>
       </div>
       <div class="rank-card rarity-legendary card-hover">
         <div class="hologram-overlay"></div>
@@ -500,7 +506,9 @@ nav a:hover::after {
         <div class="text-4xl mb-3">🌌</div>
         <p class="text-xs text-gray-400 mb-3">Epic</p>
         <p class="text-2xl font-bold text-pink-400 mb-4">Rp 200K</p>
-        <button onclick="beliRank('Galaxy','200K')" class="shop-btn">Beli Sekarang</button>
+        <button onclick="beliRank('Galaxy','200K')" class="shop-btn">
+  Beli Sekarang
+</button>
       </div>
       <div class="rank-card rarity-mythic card-hover relative">
         <div class="hologram-overlay"></div>
@@ -705,37 +713,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-let selectedRank = "";
-let selectedPrice = "";
-
-function beliRank(rank, price) {
-  selectedRank = rank;
-  selectedPrice = price;
-  document.getElementById("modal").classList.remove("hidden");
-}
-
-function closeModal() {
-  document.getElementById("modal").classList.add("hidden");
-}
-
-function kirimWA() {
-  const username = document.getElementById("username").value;
-
-  if (!username) {
-    alert("Masukkan username terlebih dahulu!");
-    return;
-  }
-
-  const nomor = "6281337574016";
-  const pesan = `Halo, saya ingin membeli:%0A
-Nama Rank: ${selectedRank}%0A
-Harga: Rp ${selectedPrice}%0A
-Username: ${username}`;
-
-  const url = `https://wa.me/${nomor}?text=${pesan}`;
-  window.open(url, "_blank");
-  closeModal();
-}
 
 /* Cursor Glow */
 const glow = document.getElementById("cursor-glow");
@@ -785,17 +762,30 @@ document.addEventListener("mousemove", (e) => {
 <!-- MODAL INPUT USERNAME -->
 <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
   <div class="bg-[#1a1f3a] p-8 rounded-xl w-80 border border-indigo-800/50 backdrop-blur">
-    <h2 class="text-lg font-bold text-indigo-300 mb-4" style="font-family: 'Space Grotesk', sans-serif;">Masukkan Username</h2>
+    
+    <h2 class="text-lg font-bold text-indigo-300 mb-4">
+      Masukkan Username
+    </h2>
 
-    <input id="username" type="text" placeholder="Username kamu"
-      class="w-full p-3 rounded bg-[#0f172a] mb-4 outline-none border border-indigo-800/30 focus:border-indigo-500 transition text-white">
+    <input 
+      id="username"
+      type="text"
+      placeholder="Username kamu"
+      class="w-full p-3 rounded bg-[#0f172a] mb-4 outline-none border border-indigo-800/30 text-white"
+    >
 
-    <button onclick="kirimWA()" class="glow-btn text-white px-4 py-2 rounded w-full font-semibold mb-2">
+    <button 
+      onclick="kirimWA()"
+      class="glow-btn text-white px-4 py-2 rounded w-full font-semibold mb-2">
       Lanjut ke WhatsApp
     </button>
-    <button onclick="closeModal()" class="text-gray-400 hover:text-white w-full py-2 rounded transition">
+
+    <button 
+      onclick="closeModal()"
+      class="text-gray-400 hover:text-white w-full py-2 rounded">
       Tutup
     </button>
+
   </div>
 </div>
 
@@ -860,6 +850,49 @@ document.addEventListener("mousemove", (e) => {
 <script src="js/preloader.js"></script>
 <script src="js/interactive.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+let selectedRank = "";
+let selectedPrice = "";
+
+function beliRank(rank, price) {
+  selectedRank = rank;
+  selectedPrice = price;
+
+  document.getElementById("modal").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+function kirimWA() {
+  const username = document.getElementById("username").value;
+
+  if (!username) {
+    alert("Masukkan username terlebih dahulu!");
+    return;
+  }
+
+  const nomor = "6281337574016";
+
+  const pesan =
+`Halo Admin Astra Network!
+
+Saya ingin membeli rank:
+
+🌌 Rank: ${selectedRank}
+💰 Harga: Rp ${selectedPrice}
+👤 Username: ${username}`;
+
+  const url =
+`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
+
+  closeModal();
+}
+</script>
 
 </body>
 </html>

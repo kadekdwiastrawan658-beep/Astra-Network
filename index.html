@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Astra Network</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      background:#0a0e27;
+      font-family:'Orbitron',sans-serif;
+    }
+
+    /* LOGO BRAND */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:20px 40px;
+    }
+
+    /* LOGO IMAGE */
+    .brand img{
+      width:52px;
+      height:52px;
+      object-fit:contain;
+
+      filter:
+        drop-shadow(0 0 10px rgba(99,102,241,0.7))
+        drop-shadow(0 0 20px rgba(139,92,246,0.4));
+
+      transition:0.3s ease;
+    }
+
+    .brand img:hover{
+      transform:rotate(8deg) scale(1.08);
+    }
+
+    /* TEXT */
+    .brand h1{
+      margin:0;
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+
+      background:linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6,
+        #06b6d4
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BRAND -->
+  <div class="brand">
+
+    <!-- GANTI logo.png DENGAN LOGO KAMU -->
+    <img src="logo.png" alt="Astra Network Logo">
+
+    <h1>ASTRA NETWORK</h1>
+
+  </div>
+
+</body>
+</html>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font: Space Grotesk, Orbitron, Space Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols (Google Icons) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/premium.css">
+
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1a4d 50%, #0f0f2e 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated star background */
+    .stars {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.9; }
+    }
+
+    .glow-btn {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+      transition: 0.3s;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 30px rgba(99, 102, 241, 1);
+      transform: scale(1.05);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    }
+
+/* Cursor Glow */
+#cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: transform 0.08s linear;
+}
+
+/* Animated Gradient */
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #6366f1,
+    #8b5cf6,
+    #06b6d4,
+    #6366f1
+  );
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating Cards */
+.float-card {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Shooting Star */
+.shooting-star {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(45deg);
+  animation: shoot 6s linear infinite;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+@keyframes shoot {
+  0% {
+    top: -10%;
+    left: -10%;
+  }
+  100% {
+    top: 120%;
+    left: 120%;
+  }
+}
+
+/* Planet Glow */
+.planet {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,92,246,0.25), transparent 70%);
+  top: -150px;
+  right: -150px;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+/* Navbar Hover */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #8b5cf6;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Animation */
+.hero-title {
+  animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<div id="scroll-bar"></div>
+<body class="text-white">
+
+<!-- PREMIUM PRELOADER -->
+<div id="preloader" class="fixed inset-0 bg-[#0a0e27] z-[9999] flex flex-col items-center justify-center">
+  <div class="w-full h-full flex flex-col items-center justify-center gap-8">
+    <div class="relative w-20 h-20 mb-4">
+      <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-indigo-500 border-r-purple-500 animate-spin"></div>
+      <div class="absolute inset-2 rounded-full border-2 border-transparent border-b-indigo-400 animate-pulse"></div>
+      <div class="absolute inset-4 flex items-center justify-center text-2xl font-bold bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full">M</div>
+    </div>
+    <div class="flex gap-3 mb-8">
+      <div class="step-badge" data-step="0"><span class="step-icon">◌</span> Init</div>
+      <div class="step-badge" data-step="1"><span class="step-icon">◌</span> Assets</div>
+      <div class="step-badge" data-step="2"><span class="step-icon">◌</span> Connect</div>
+      <div class="step-badge" data-step="3"><span class="step-icon">◌</span> Ready</div>
+    </div>
+    <div class="w-64 h-1 bg-[#1a1f3a] rounded-full overflow-hidden">
+      <div id="progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all" style="width: 0%"></div>
+    </div>
+    <div class="text-center mt-6">
+      <p id="step-text" class="text-indigo-300 font-semibold mb-2">Initializing Universe...</p>
+      <p id="percent-text" class="text-2xl font-bold text-white">0%</p>
+    </div>
+  </div>
+</div>
+
+<div id="cursor-glow"></div>
+<div id="custom-cursor"></div>
+<div id="cursor-ring"></div>
+<div class="stars" id="stars"></div>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-8 py-4 bg-[#0a0e27]/70 backdrop-blur-lg border-b border-indigo-800/30">
+  <h1 class="text-2xl font-bold gradient-text logo" style="letter-spacing: 3px;">ASTRA NETWORK </h1>
+  
+  <div class="hidden lg:flex gap-6 items-center">
+    <a href="#beranda" class="text-gray-400 hover:text-indigo-400 transition">Server</a>
+    <a href="#gamemodes" class="text-gray-400 hover:text-indigo-400 transition">Modes</a>
+    <a href="#toko" class="text-gray-400 hover:text-indigo-400 transition">Store</a>
+    <a href="vote.html" class="text-gray-400 hover:text-indigo-400 transition">Vote</a>
+    <a href="rules.html" class="text-gray-400 hover:text-indigo-400 transition">Rules</a>
+    <a href="wiki.html" class="text-gray-400 hover:text-indigo-400 transition">Wiki</a>
+    <a href="staff.html" class="text-gray-400 hover:text-indigo-400 transition">Staff</a>
+    <a href="status.html" class="text-gray-400 hover:text-indigo-400 transition">Status</a>
+    <a href="support.html" class="text-gray-400 hover:text-indigo-400 transition">Support</a>
+    
+    <div class="flex items-center gap-2 text-gray-400 border-l border-indigo-800/50 pl-6 cursor-pointer hover:text-white transition">
+      <span class="material-symbols-outlined text-sm">public</span>
+      <span class="text-sm font-bold">ID</span>
+    </div>
+
+    <div class="flex gap-3">
+      <button class="text-indigo-300 hover:text-white px-4 py-2 transition text-sm font-semibold">Login</button>
+      <button class="glow-btn text-white px-6 py-2 rounded-lg font-semibold text-sm">Join Now</button>
+    </div>
+  </div>
+  
+  <button id="mobile-menu-toggle" class="md:hidden text-indigo-400 text-2xl">☰</button>
+</nav>
+
+<!-- WELCOME SECTION ATAS -->
+<section class="flex flex-col items-center justify-center min-h-[40vh] pt-32 pb-16">
+  <div class="text-center max-w-3xl">
+    <h1 class="text-5xl md:text-7xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 3px;">
+      Selamat Datang di<br>
+      <span class="gradient-text">ASTRA NETWORK</span>
+    </h1>
+    <p class="text-xl text-gray-400 mb-8"><span id="typing-text"></span></p>
+    
+    <!-- SERVER STATS -->
+    <div class="grid grid-cols-3 gap-6 mb-8">
+      <div class="bg-[#1a1f3a]/60 rounded-lg p-4 border border-indigo-800/30 backdrop-blur">
+        <p class="text-3xl font-bold text-indigo-400">0</p>
+        <p class="text-sm text-gray-400 mt-1">Pemain Online</p>
+      </div>
+      <div class="bg-[#1a1f3a]/60 rounded-lg p-4 border border-indigo-800/30 backdrop-blur">
+        <p class="text-3xl font-bold text-indigo-400">1.21.6+</p>
+        <p class="text-sm text-gray-400 mt-1">Versi Server</p>
+      </div>
+      <div class="bg-[#1a1f3a]/60 rounded-lg p-4 border border-indigo-800/30 backdrop-blur">
+        <p class="text-3xl font-bold text-indigo-400">0</p>
+        <p class="text-sm text-gray-400 mt-1">Pemain Terdaftar</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4 justify-center">
+      <button class="glow-btn text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2">
+        <span class="material-symbols-outlined">sports_esports</span>
+        Main Sekarang
+      </button>
+      <button class="border border-indigo-500 text-indigo-300 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-500/10 transition flex items-center gap-2">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" class="w-5 h-5 invert" alt="Discord">
+    Bergabung Discord
+</button>
+    </div>
+  </div>
+</section>
+
+<!-- SERVER ADDRESS -->
+<section class="flex justify-center items-center gap-4 px-4 mb-16 z-10 relative flex-wrap">
+  <div class="glass-card flex items-center gap-4">
+    <span id="status-dot" class="w-3 h-3 bg-red-400 rounded-full animate-pulse"></span>
+    <span id="server-status" class="text-gray-300">Loading...</span>
+    <span id="status-detail" class="text-indigo-300 font-semibold text-sm">-</span>
+  </div>
+  <button data-copy-ip onclick="InteractiveUtils.copyIPToClipboard()" class="glass-card px-6 py-2 hover:border-indigo-500 transition cursor-pointer flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm">content_copy</span>
+    <span>Copy IP</span>
+  </button>
+</section>
+
+<!-- SECTION: GAME MODES -->
+<section id="gamemodes" class="px-4 py-20 z-10 relative">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-4 gradient-text" style="font-family: 'Space Grotesk', sans-serif;">GAME MODES</h2>
+    <p class="text-center text-gray-400 mb-16">Jelajahi berbagai mode permainan yang unik, menantang, dan penuh petualangan seru</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Survival Mix -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <div class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg mb-4 flex items-center justify-center">
+          <span class="text-xl">🌍</span>
+        </div>
+        <h3 class="text-xl font-bold text-indigo-300 mb-2">Survival Mix</h3>
+        <p class="text-gray-400 text-sm mb-4">Survival dengan twist! Enchant kustom, item unik, pets, dan banyak lagi!</p>
+        <div class="text-xs text-gray-500">Berjalan sejak: coming soon</div>
+      </div>
+
+      <!-- SkyBlock Tycoon -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg mb-4 flex items-center justify-center">
+          <span class="text-xl">🏝️</span>
+        </div>
+        <h3 class="text-xl font-bold text-purple-300 mb-2">SkyBlock Tycoon</h3>
+        <p class="text-gray-400 text-sm mb-4">Jadilah pemain terkaya! Generator, energi, island modules, dan banyak lagi!</p>
+        <div class="text-xs text-gray-500">Berjalan sejak: coming soon</div>
+      </div>
+
+      <!-- Creative Mode -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg mb-4 flex items-center justify-center">
+          <span class="text-xl">🎨</span>
+        </div>
+        <h3 class="text-xl font-bold text-cyan-300 mb-2">Creative Mode</h3>
+        <p class="text-gray-400 text-sm mb-4">Buat bangunan dengan tools yang kuat! WorldEdit, Arceon, aset, dan lainnya!</p>
+        <div class="text-xs text-gray-500">Berjalan sejak: coming soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: ABOUT SERVER -->
+<section id="tentang" class="px-4 py-20 z-10 relative">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-4 gradient-text" style="font-family: 'Space Grotesk', sans-serif;">TENTANG ASTRA NETWORK</h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Pertama kali dirilis pada coming soon, Astra Network adalah server Minecraft Indonesia yang menghadirkan pengalaman bermain terbaik untuk semua pemain.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-indigo-300 mb-3">🛡️ Anti-Cheat & Moderasi Kuat</h3>
+        <p class="text-gray-400 text-sm">Dilengkapi sistem Anti-Cheat terbaik dan tim moderasi profesional yang aktif, memastikan pengalaman bermain yang adil untuk semua pemain.</p>
+      </div>
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-purple-300 mb-3">⚡ Latensi Rendah & Uptime Tinggi</h3>
+        <p class="text-gray-400 text-sm">Infrastruktur premium memastikan latensi rendah dengan uptime 99,9%. Main kapan saja tanpa khawatir server down.</p>
+      </div>
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-cyan-300 mb-3">💾 Backup Data Maksimal</h3>
+        <p class="text-gray-400 text-sm">Sistem backup otomatis berjalan setiap beberapa jam, menjamin seluruh progress dan data kamu tersimpan aman.</p>
+      </div>
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-pink-300 mb-3">👥 Komunitas Aktif & Ramah</h3>
+        <p class="text-gray-400 text-sm">Bergabung dengan ribuan member aktif di Discord. Kami berusaha membangun lingkungan positif dan saling menghargai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: RANK / STORE -->
+<section id="toko" class="px-4 py-20 z-10 relative">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-4 gradient-text" style="font-family: 'Space Grotesk', sans-serif;">PREMIUM RANK</h2>
+    <p class="text-center text-gray-400 mb-16">Tingkatkan pengalaman bermain Anda dengan rank premium eksklusif</p>
+
+    <div class="grid md:grid-cols-5 gap-6">
+      <div class="rank-card rarity-common card-hover">
+        <div class="hologram-overlay"></div>
+        <div class="rank-label">Asteroid</div>
+        <div class="text-4xl mb-3">⭐</div>
+        <p class="text-xs text-gray-400 mb-3">Paling Populer!</p>
+        <p class="text-2xl font-bold text-indigo-400 mb-4">Rp 60K</p>
+        <button onclick="beliRank('Asteroid','60K')" class="shop-btn">Beli Sekarang</button>
+      </div>
+      <div class="rank-card rarity-rare card-hover">
+        <div class="hologram-overlay"></div>
+        <div class="rank-label">Bulan</div>
+        <div class="text-4xl mb-3">💎</div>
+        <p class="text-xs text-gray-400 mb-3">Banyak Dipilih</p>
+        <p class="text-2xl font-bold text-purple-400 mb-4">Rp 100K</p>
+        <button onclick="beliRank('Bulan','100K')" class="shop-btn">Beli Sekarang</button>
+      </div>
+      <div class="rank-card rarity-epic card-hover">
+        <div class="hologram-overlay"></div>
+        <div class="rank-label">Orbiter</div>
+        <div class="text-4xl mb-3">🌟</div>
+        <p class="text-xs text-gray-400 mb-3">Langka</p>
+        <p class="text-2xl font-bold text-cyan-400 mb-4">Rp 140K</p>
+        <button onclick="beliRank('Orbiter','140K')" class="shop-btn">Beli Sekarang</button>
+      </div>
+      <div class="rank-card rarity-legendary card-hover">
+        <div class="hologram-overlay"></div>
+        <div class="rank-label">Galaxy</div>
+        <div class="text-4xl mb-3">🌌</div>
+        <p class="text-xs text-gray-400 mb-3">Epic</p>
+        <p class="text-2xl font-bold text-pink-400 mb-4">Rp 200K</p>
+        <button onclick="beliRank('Galaxy','200K')" class="shop-btn">Beli Sekarang</button>
+      </div>
+      <div class="rank-card rarity-mythic card-hover relative">
+        <div class="hologram-overlay"></div>
+        <div class="best-tag">BEST VALUE</div>
+        <div class="rank-label">Milkyway</div>
+        <div class="text-4xl mb-3">✨</div>
+        <p class="text-xs text-gray-300 mb-3">Terbaik!</p>
+        <p class="text-2xl font-bold text-yellow-400 mb-4">Rp 280K</p>
+        <button onclick="beliRank('Milkyway','280K')" class="shop-btn">Beli Sekarang</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: TOP PLAYERS -->
+<section id="leaderboard" class="px-4 py-20 z-10 relative">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-4 gradient-text" style="font-family: 'Space Grotesk', sans-serif;">PEMAIN TERATAS</h2>
+    <p class="text-center text-gray-400 mb-16">Berkompetisi dan naik ke puncak!</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Top Donatur -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-indigo-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-indigo-300 mb-4">💰 Top Donatur</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center font-bold text-black">1</div>
+            <div>
+              <p class="font-semibold">player 1</p>
+              <p class="text-sm text-gray-400">Rp 0</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full flex items-center justify-center font-bold text-black">2</div>
+            <div>
+              <p class="font-semibold">Player 2</p>
+              <p class="text-sm text-gray-400">Rp 0</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center font-bold text-black">3</div>
+            <div>
+              <p class="font-semibold">Player 3</p>
+              <p class="text-sm text-gray-400">Rp 0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Power -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-purple-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-purple-300 mb-4">⚔️ Skill Power Survival</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center font-bold text-black">1</div>
+            <div>
+              <p class="font-semibold">Player 1</p>
+              <p class="text-sm text-gray-400">0 Power</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full flex items-center justify-center font-bold text-black">2</div>
+            <div>
+              <p class="font-semibold">Player 2</p>
+              <p class="text-sm text-gray-400">0 Power</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center font-bold text-black">3</div>
+            <div>
+              <p class="font-semibold">Player 3</p>
+              <p class="text-sm text-gray-400">0 Power</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Credits -->
+      <div class="card-hover bg-[#1a1f3a]/60 rounded-xl p-6 border border-cyan-800/30 backdrop-blur">
+        <h3 class="text-lg font-bold text-cyan-300 mb-4">💎 Top Credits Tycoon</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center font-bold text-black">1</div>
+            <div>
+              <p class="font-semibold">Player 1</p>
+              <p class="text-sm text-gray-400">Rp 0 Kredit</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full flex items-center justify-center font-bold text-black">2</div>
+            <div>
+              <p class="font-semibold">Player 2</p>
+              <p class="text-sm text-gray-400">Rp 0 Kredit</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center font-bold text-black">3</div>
+            <div>
+              <p class="font-semibold">Player 3</p>
+              <p class="text-sm text-gray-400">Rp 0 Kredit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: KOMUNITAS -->
+<section class="community-section">
+        <h1 class="text-lg font-bold text-indigo-300 mb-4">BERGABUNG DENGAN KOMUNITAS</h3>
+    <p>Tetap terhubung dengan kami di media sosial untuk pembaruan terbaru</p>
+
+   <div class="card-container">
+
+    <!-- Discord -->
+    <a href="https://discord.gg/QjR6skDXUG" target="_blank" class="card-link">
+        <div class="card card-discord">
+            <div class="social-icon">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord logo">
+            </div>
+            <h3>Discord</h3>
+            <p>Bergabung dengan komunitas kami di Discord</p>
+        </div>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@astranetwork18" target="_blank" class="card-link">
+        <div class="card card-tiktok">
+            <div class="social-icon">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok logo">
+            </div>
+            <h3>TikTok</h3>
+            <p>Konten menarik dan klip seru</p>
+        </div>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://instagram.com/usernamekamu" target="_blank" class="card-link">
+        <div class="card card-insta">
+            <div class="social-icon">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram logo">
+            </div>
+            <h3>Instagram</h3>
+            <p>Update dan galeri terbaru</p>
+        </div>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://whatsapp.com/channel/LINKCHANNELMU" target="_blank" class="card-link">
+        <div class="card card-wa">
+            <div class="social-icon">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp logo">
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Berlangganan channel kami</p>
+        </div>
+    </a>
+
+</div>
+</section>
+<script>
+// Generate random stars
+function createStars(count = 100) {
+  const stars = document.getElementById('stars');
+  if (!stars) return;
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.opacity = Math.random() * 0.8 + 0.2;
+    star.style.animationDuration = `${2 + Math.random() * 3}s`;
+    stars.appendChild(star);
+  }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    createStars(100);
+
+    const modalEl = document.getElementById("modal");
+    if (modalEl) {
+      modalEl.addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+    }
+  });
+
+let selectedRank = "";
+let selectedPrice = "";
+
+function beliRank(rank, price) {
+  selectedRank = rank;
+  selectedPrice = price;
+  document.getElementById("modal").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+function kirimWA() {
+  const username = document.getElementById("username").value;
+
+  if (!username) {
+    alert("Masukkan username terlebih dahulu!");
+    return;
+  }
+
+  const nomor = "6281337574016";
+  const pesan = `Halo, saya ingin membeli:%0A
+Nama Rank: ${selectedRank}%0A
+Harga: Rp ${selectedPrice}%0A
+Username: ${username}`;
+
+  const url = `https://wa.me/${nomor}?text=${pesan}`;
+  window.open(url, "_blank");
+  closeModal();
+}
+
+/* Cursor Glow */
+const glow = document.getElementById("cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+/* Typing Effect */
+const text = "Tempat semua orang untuk membuat karya dan mencari teman baru disini";
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 40);
+  }
+}
+
+typing();
+
+/* Scroll Reveal */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const revealTop = el.getBoundingClientRect().top;
+
+    if (revealTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+
+/* Parallax */
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  document.body.style.backgroundPosition = `${x}px ${y}px`;
+});
+</script>
+
+<!-- MODAL INPUT USERNAME -->
+<div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+  <div class="bg-[#1a1f3a] p-8 rounded-xl w-80 border border-indigo-800/50 backdrop-blur">
+    <h2 class="text-lg font-bold text-indigo-300 mb-4" style="font-family: 'Space Grotesk', sans-serif;">Masukkan Username</h2>
+
+    <input id="username" type="text" placeholder="Username kamu"
+      class="w-full p-3 rounded bg-[#0f172a] mb-4 outline-none border border-indigo-800/30 focus:border-indigo-500 transition text-white">
+
+    <button onclick="kirimWA()" class="glow-btn text-white px-4 py-2 rounded w-full font-semibold mb-2">
+      Lanjut ke WhatsApp
+    </button>
+    <button onclick="closeModal()" class="text-gray-400 hover:text-white w-full py-2 rounded transition">
+      Tutup
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="relative z-10 border-t border-indigo-800/30 mt-20 py-12 px-4 bg-[#0a0e27]/50">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <!-- About -->
+      <div>
+        <h3 class="font-bold text-indigo-300 mb-4" style="font-family: 'Space Grotesk', sans-serif;">ASTRA NETWORK</h3>
+        <p class="text-sm text-gray-400 mb-4">Server Minecraft Indonesia dengan pengalaman bermain terbaik untuk semua pemain.</p>
+        <p class="text-xs text-gray-500">Dibuat dengan ❤️ di Indonesia</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-bold text-gray-300 mb-4">Tautan</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#gamemodes" class="text-gray-400 hover:text-indigo-400 transition">Game Modes</a></li>
+          <li><a href="#toko" class="text-gray-400 hover:text-indigo-400 transition">Store</a></li>
+          <li><a href="#leaderboard" class="text-gray-400 hover:text-indigo-400 transition">Leaderboard</a></li>
+          <li><a href="#komunitas" class="text-gray-400 hover:text-indigo-400 transition">Komunitas</a></li>
+          <li><a href="vote.html" class="text-gray-400 hover:text-indigo-400 transition">Vote</a></li>
+          <li><a href="rules.html" class="text-gray-400 hover:text-indigo-400 transition">Rules</a></li>
+          <li><a href="wiki.html" class="text-gray-400 hover:text-indigo-400 transition">Wiki</a></li>
+          <li><a href="staff.html" class="text-gray-400 hover:text-indigo-400 transition">Staff</a></li>
+          <li><a href="status.html" class="text-gray-400 hover:text-indigo-400 transition">Status</a></li>
+          <li><a href="support.html" class="text-gray-400 hover:text-indigo-400 transition">Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="font-bold text-gray-300 mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-gray-400 hover:text-indigo-400 transition">Terms of Service</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-indigo-400 transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-indigo-400 transition">Server Rules</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-bold text-gray-300 mb-4">Kontak</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>📧 coming soon</li>
+          <li>🎮 coming soon</li>
+          <li>📍 Indonesia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-indigo-800/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>© 2026 Astra Network. Tidak berafiliasi dengan Mojang AB.</p>
+      <p>Dirancang & Dikembangkan dengan ❤️</p>
+    </div>
+  </div>
+  
+</footer>
+
+<!-- Scripts -->
+<script src="js/preloader.js"></script>
+<script src="js/interactive.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
